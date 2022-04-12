@@ -12,11 +12,13 @@
 </body>
 
 <script> 
-    var numero = 5;
+    var numero = Math.round(Math.random() * 10);
     var chute = 0;
+    var tentativas = 0;
 
     while(chute != numero) {
-        chute = parseInt(prompt("Adivinhe o número que pensei: "))
+        chute = parseInt(prompt("Adivinhe o número que pensei (de 0 a 10): "))
+        tentativas++;
 
         if(chute < numero) {
             alert("O número é maior, tente outra vez!");
@@ -26,6 +28,6 @@
         }
     }
 
-    alert("Parabéns, você acertou!");
+    alert("Parabéns, você acertou em " + tentativas+ " tentativas");
 
 </script>

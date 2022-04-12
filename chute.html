@@ -12,12 +12,18 @@
 </body>
 
 <script> 
-    var numero = Math.round(Math.random() * 10);
     var chute = 0;
     var tentativas = 0;
 
+    function sorteia(n) {
+        return Math.round(Math.random() * n);
+    }
+
+    var numeroEscolhido = parseInt(prompt("Digite um número: "));
+    var numero = sorteia(numeroEscolhido)
+
     while(chute != numero) {
-        chute = parseInt(prompt("Adivinhe o número que pensei (de 0 a 10): "))
+        chute = parseInt(prompt("Adivinhe o número que pensei (de 0 a " + numeroEscolhido + "): "))
         tentativas++;
 
         if(chute < numero) {
@@ -28,6 +34,6 @@
         }
     }
 
-    alert("Parabéns, você acertou em " + tentativas+ " tentativas");
+    alert("Parabéns, você acertou em " + tentativas+ " tentativas. O número que pensei foi o " + numero);
 
 </script>

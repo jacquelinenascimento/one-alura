@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<title>
+    Jogo de adivinhação
+</title>
+<head>
+    <h1> Jogo de adivinhação </h1>
+</head>
+
+<body>
+
+</body>
+
+<script> 
+    var numero = 5;
+    var chute = 0;
+
+    while(chute != numero) {
+        chute = parseInt(prompt("Adivinhe o número que pensei: "))
+
+        if(chute < numero) {
+            alert("O número é maior, tente outra vez!");
+        }
+        if(chute > numero) {
+            alert("O número é menor, tente outra vez!");
+        }
+    }
+
+    alert("Parabéns, você acertou!");
+
+</script>

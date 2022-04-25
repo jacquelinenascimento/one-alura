@@ -20,20 +20,21 @@
     }
 
     var numeroEscolhido = parseInt(prompt("Digite um número: "));
-    var numero = sorteia(numeroEscolhido)
+    var numero = sorteia(numeroEscolhido);
 
-    while(chute != numero) {
-        chute = parseInt(prompt("Adivinhe o número que pensei (de 0 a " + numeroEscolhido + "): "))
-        tentativas++;
+    for(var tentativas = 1; tentativas <=3; tentativas++) {
+        
+        chute = parseInt(prompt("Você tem 3 tentativas, adivinhe o número que pensei (de 0 a " + numeroEscolhido + "): "))
+        
+        if(chute === numero) {
+            alert("Parabéns, você acertou em " + tentativas+ " tentativas. O número que pensei foi o " + numero);
+            break;
 
-        if(chute < numero) {
-            alert("O número é maior, tente outra vez!");
-        }
-        if(chute > numero) {
-            alert("O número é menor, tente outra vez!");
+        } else if(chute < numero) {
+            alert("O número é maior, tentativa " + tentativas);
+
+        } else if(chute > numero) {
+            alert("O número é menor, tentativa " + tentativas);
         }
     }
-
-    alert("Parabéns, você acertou em " + tentativas+ " tentativas. O número que pensei foi o " + numero);
-
 </script>
